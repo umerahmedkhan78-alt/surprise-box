@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love QR Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS@master/dist/easy.qrcode.min.js"></script>
+</head>
+<body class="theme-love">
+    <div class="container">
+        <div class="card">
+            <div id="icon" class="emoji-icon">❤️</div>
+            <h1 id="title">Create Her Surprise</h1>
+            
+            <div id="step-write">
+                <select id="moodSelect" onchange="changeTheme()">
+                    <option value="love">❤️ Love / Anniversary</option>
+                    <option value="sorry">🥺 I'm Sorry</option>
+                    <option value="angry">🌸 Please Forgive Me</option>
+                    <option value="birthday">🎂 Happy Birthday</option>
+                </select>
+                <textarea id="userMessage" placeholder="Write your heart out here..."></textarea>
+                <button class="main-btn" onclick="goToQR()">Generate Magic QR →</button>
+            </div>
+
+            <div id="step-qr" class="hidden">
+                <div id="qrcode-wrapper">
+                    <div id="qrcode"></div>
+                </div>
+                <p class="qr-hint">Your magic code is ready!</p>
+                <button id="downloadBtn" onclick="downloadQR()">Download & Send 📥</button>
+                <button class="secondary-btn" onclick="goBack()">← Edit Message</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

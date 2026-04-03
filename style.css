@@ -1,0 +1,65 @@
+:root {
+    --love-bg: #2d0b3d; --love-accent: #ff4081;
+    --sorry-bg: #1a1c2c; --sorry-accent: #7a8cff;
+    --angry-bg: #2b1111; --angry-accent: #ff6b6b;
+    --bday-bg: #2e2b0a; --bday-accent: #ffd700;
+}
+
+body {
+    margin: 0; padding: 0;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
+    transition: background 0.8s ease;
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; overflow: hidden;
+}
+
+/* Background Themes */
+.theme-love { background: var(--love-bg); color: white; }
+.theme-sorry { background: var(--sorry-bg); color: white; }
+.theme-angry { background: var(--angry-bg); color: white; }
+.theme-birthday { background: var(--bday-bg); color: white; }
+
+.container { width: 90%; max-width: 400px; text-align: center; }
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px; border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.emoji-icon { font-size: 60px; margin-bottom: 10px; animation: float 3s infinite ease-in-out; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+textarea, select {
+    width: 100%; padding: 15px; margin-top: 15px; border-radius: 20px;
+    border: none; background: rgba(255, 255, 255, 0.2); color: white;
+    font-size: 1rem; box-sizing: border-box; outline: none;
+}
+
+button {
+    width: 100%; padding: 15px; border-radius: 50px; border: none;
+    margin-top: 15px; font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+
+.main-btn { background: #ff4081; color: white; }
+.main-btn:hover { background: #f50057; transform: scale(1.05); }
+
+#downloadBtn { background: #00c853; color: white; }
+
+.secondary-btn { background: transparent; border: 1px solid white; color: white; }
+
+#qrcode-wrapper {
+    background: white; padding: 20px; border-radius: 25px;
+    display: inline-block; margin: 15px 0;
+}
+
+.message-box { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 20px; margin-top: 10px; }
+
+.hidden { display: none; }
+.qr-hint { font-size: 0.9rem; opacity: 0.8; }

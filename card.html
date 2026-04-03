@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message For You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-love">
+    <div class="container">
+        <div class="card" id="envelope">
+            <div class="emoji-icon">✉️</div>
+            <h1>You have a letter!</h1>
+            <p>Something special is waiting inside...</p>
+            <button class="main-btn" onclick="openLetter()">Open It →</button>
+        </div>
+
+        <div class="card hidden" id="message-card">
+            <div class="emoji-icon" id="card-icon">💖</div>
+            <h2 id="card-title">My Heart to Yours</h2>
+            <div class="message-box">
+                <p id="displayText"></p>
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.7;">Yours entirely, always.</p>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const msg = urlParams.get('msg') || "I love you!";
+        const mood = urlParams.get('mood') || "love";
+        
+        // Apply the mood theme and icons
+        document.body.className = "theme-" + mood;
+        const icons = { love: "💖", sorry: "🥺", angry: "🌸", birthday: "🎂" };
+        document.getElementById('card-icon').innerText = icons[mood] || "💖";
+
+        function openLetter() {
+            document.getElementById('envelope').classList.add('hidden');
+            document.getElementById('message-card').classList.remove('hidden');
+            document.getElementById('displayText').innerText = decodeURIComponent(msg);
+        }
+    </script>
+</body>
+</html>
